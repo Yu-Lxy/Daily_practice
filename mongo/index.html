@@ -9,24 +9,31 @@
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
-  <title>瓜果超市</title>
+  <title>小超市</title>
 </head>
 
 <body>
   <div id="app">
-    <el-input v-model="form.name" size="small" style="width: 130px" placeholder="名称"></el-input>
-    <el-input v-model="form.price" size="small" style="width: 130px" placeholder="价格"></el-input>
-    <el-button @click="add" type="primary" size="small">add</el-button>
 
+    <!-- form -->
+    <div>
+      <el-input v-model="form.name" size="small" style="width: 130px" placeholder="name"></el-input>
+      <el-input v-model="form.price" size="small" style="width: 130px" placeholder="price"></el-input>
+      <el-button @click="add" type="primary" size="small">add</el-button>
+    </div>
+
+    <!-- table -->
     <el-table :data="fruits" style="width: 400px">
       <el-table-column prop="name" label="名称" ></el-table-column>
-      <el-table-column prop="price" label="单价" ></el-table-column>
-      <el-table-column >
+      <el-table-column prop="price" label="价格" ></el-table-column>
+      <el-table-column>
         <template slot-scope="scope">
           <el-button size="mini" type="danger" plain icon="el-icon-delete" @click="dele(scope.$index)"></el-button>
         </template>
       </el-table-column>
     </el-table>
+
+    <!-- pagination -->
     <el-pagination layout="prev, pager, next" @current-change="currentChange" :total="total" :page-size="5"></el-pagination>
   </div>
   <script>
@@ -67,7 +74,7 @@
           })
         },
         dele (index) {
-          axios.post('/api/dele',{ name: this.fruits[index].name })
+          axios.post('/api/dele',{ _id: this.fruits[index]._id })
           .then(res => {
             console.log(res.data)
             if (res.data.ok) {
