@@ -1,3 +1,5 @@
+## 运行
+首先安装以下
 ```
 npm i express path events mongodb nodemon
 ```
@@ -17,4 +19,4 @@ nodemon index.js
 ```
 打开localhost:3000能看到如下样式
 
-![image.png](https://i.loli.net/2020/08/27/jnPoNBzEDuFq12t.png)
+![image.png](https://i.loli.net/2020/08/27/ALNjeIKPOY9QTHF.png)
