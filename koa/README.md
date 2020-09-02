@@ -2,52 +2,6 @@
 
 构建一个数据通过koa的api获取，页面通过vue渲染的前后端都有的完整demo。包括一个登陆页面和一个todolist页面，其中用到了前端Vue框架、koa提供接口、验证token、sequelize操作mysql等，这里记录一些关键点。
 
-### 项目结构
-.
-├── README.md
-├── app.js  // koa入口文件
-├── build // webpack配置文件（用于构建、监听）
-│   ├── build.js
-│   ├── check-versions.js
-│   ├── logo.png
-│   ├── utils.js
-│   ├── vue-loader.conf.js
-│   ├── webpack.base.conf.js
-│   ├── webpack.dev.conf.js
-│   └── webpack.prod.conf.js
-├── config  // vue配置文件
-│   ├── dev.env.js
-│   ├── index.js
-│   ├── prod.env.js
-│   └── test.env.js
-├── dist  // 打包后的文件
-│   ├── index.html
-│   └── static
-├── index.html  // 主页
-├── package-lock.json // 记录当前状态下实际安装的各个npm package的具体来源和版本号
-├── package.json  // 项目的配置信息，启动方式
-├── server  // koa后端，提供api
-│   ├── config  // 配置文件夹
-│   ├── controllers // 控制器
-│   ├── models  // 模型
-│   ├── routes  // 路由
-│   └── schema  // 数据库表结构
-├── src
-│   ├── App.vue // 主文件
-│   ├── assets  // 静态资源
-│   ├── components  // 组件
-│   ├── main.js // 挂载vue的入口js
-│   └── router  // 路由
-├── static  // 放置无需经由 Webpack 处理的静态文件
-├── test
-│   ├── e2e
-│   └── unit
-└── yarn.lock // yarn自动生成的lock文件
-
-
-> 除了vue-cli生成的，我们另外要添加的是koa入口文件`app.js`和提供api的`server`文件夹。
-
-
 ### 初始化
 
 这里用到的是vue-cli2的webpack，项目创建好之后执行
