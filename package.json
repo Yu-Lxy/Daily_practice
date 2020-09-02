@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "element-ui": "^2.13.2",
+    "sequelize-auto": "^0.5.4"
+  }
+}
