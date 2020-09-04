@@ -36,4 +36,6 @@ app.post('/api/dele', async (req, res) => {
   res.json({ ok: 1, data: {} })
 })
 
-app.listen(3000)
+app.listen(3000, () => {
+  console.log('Listening in 3000')
+})
