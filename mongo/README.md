@@ -1,9 +1,3 @@
----
-title: 第一次使用mongoDB的记录
-date: 2020-09-04 15:30:15
-tags: mongoDB
-categories: mongoDB
----
 ## 简介
 
 一个 `vue+express+mongodb` 的小demo，实现了列表的增删查，以及简单的分页功能。
