@@ -2,19 +2,19 @@ var app = require('express')()
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/index.html')
+// })
 
 io.on('connection', (socket) => {
   console.log('a user connected')
   
   //响应某用户发送消息
-  socket.on('chat message', (msg) => {
-    console.log('chat message:' + msg)
+  // socket.on('chat message', (msg) => {
+  //   console.log('chat message:' + msg)
     // 广播给所有人
-    io.emit('chat message', msg)
-  })  
+    io.emit('chat message', 'sssssssssss')
+  // })  
 
   socket.on('disconnect', () => {
     console.log('user disconnected')

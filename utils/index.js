@@ -2,7 +2,7 @@
  * @Author: lixiaoyu
  * @Date: 2020-09-29 11:55:05
  * @LastEditors: lixiaoyu
- * @LastEditTime: 2020-09-29 17:26:36
+ * @LastEditTime: 2020-09-30 10:26:16
  */
 
 const arrRemoveRepeat2 = arr => {
@@ -28,3 +28,7 @@ const arr2 = [
 
 console.log(arrRemoveRepeat2([...arr1, ...arr2]))
 
+const checkUrl = url => {
+  return /http[s]{0,1}:\/\/([\w.]+\/?)\S*/.test(url)
+}
+console.log(checkUrl('http://sss'))
