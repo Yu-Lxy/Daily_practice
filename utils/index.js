@@ -1,16 +1,25 @@
-/*
- * @Author: lixiaoyu
- * @Date: 2020-09-29 11:55:05
- * @LastEditors: lixiaoyu
- * @LastEditTime: 2020-09-30 10:26:16
+/**
+ * 判断两个对象是否相等,目前只支持对象值为简单数据类型的判断
+ * @param {Object} oneObj  对象
+ * @param {Object} twoObj 对象
  */
+const objIsEqual = (oneObj, twoObj) => {
+  const aProps = Object.getOwnPropertyNames(oneObj);
+  const bProps = Object.getOwnPropertyNames(twoObj);
 
-const arrRemoveRepeat2 = arr => {
-  let obj = {}
-  return arr = arr.reduce((prev, cur) => {
-    obj[cur.id] ? '' : obj[cur.id] = true && prev.push(cur)
-    return prev
-  }, [])
+        if (aProps.length != bProps.length) {
+            return false;
+        }
+
+        for (let i = 0; i < aProps.length; i++) {
+            let propName = aProps[i];
+            let propA = oneObj[propName];
+            let propB = twoObj[propName];
+            if ( propA !== propB) {
+                    return false;
+            }
+        }
+        return true;
 }
 
 const arr1 = [
@@ -26,9 +35,15 @@ const arr2 = [
   {id: 6, name: 'fff'},
 ]
 
-console.log(arrRemoveRepeat2([...arr1, ...arr2]))
-
-const checkUrl = url => {
-  return /http[s]{0,1}:\/\/([\w.]+\/?)\S*/.test(url)
+const obj1 = {
+  id: 1,
+  name: 'lxy',
+  age: 18
 }
-console.log(checkUrl('http://sss'))
+
+const obj2 = {
+  id: 1,
+  name: 'lxy',
+  age: 18
+}
+console.log(objIsEqual(obj1, obj2))
